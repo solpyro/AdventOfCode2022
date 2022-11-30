@@ -1,6 +1,11 @@
 # Advent of Code 2022
 
-I haven't made it past mid-week (days 19 and 16) for the past two years, working in C# and Python, and now I'm waiting for inspiration as to a language/technology to earn my ⭐s.
+This year I'm using it as an excuse to learn [Go](https://go.dev/doc/) while I earn my ⭐s.
+
+Download Go from https://go.dev/dl/ and [install](https://go.dev/doc/install). I'm using VS Code and the [Go plugin](https://code.visualstudio.com/docs/languages/go).
+
+Run `go mod init example.com/greetings` to create a new module for each day's solution, and add the code in a new folder
+**main.go** is the starting point for the program, so it should be pointed to the solution we want to run.
 
 ## Day 1: ???
 
