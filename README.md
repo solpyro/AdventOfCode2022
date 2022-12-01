@@ -1,13 +1,8 @@
 # Advent of Code 2022
 
-This year I'm using it as an excuse to learn [Go](https://go.dev/doc/) while I earn my ⭐s.
+This year I'm going to try creating graphical outputs for each puzzle, using [Processing](https://processing.org/) while I earn my ⭐s.
 
-Download Go from https://go.dev/dl/ and [install](https://go.dev/doc/install). I'm using VS Code and the [Go plugin](https://code.visualstudio.com/docs/languages/go).
-
-Run `go mod init example.com/greetings` to create a new module for each day's solution, and add the code in a new folder
-**main.go** is the starting point for the program, so it should be pointed to the solution we want to run.
-
-## Day 1: ???
+## Day 1: Calorie Counting
 
 ### Section deep dive
 
