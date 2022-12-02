@@ -1,11 +1,12 @@
-String file = "test.txt";
-//String file = "data.txt"; 
+//String file = "test.txt";
+String file = "data.txt"; 
 
 String[] rounds;
 
 void setup() {
   parse();
   part1();
+  part2();
 }
 
 void parse() {
