@@ -31,6 +31,7 @@ void parseData() {
 }
 
 void part1() {
+  println("Elves count: "+elves.size());
   Elf elfWithMostCalories = elves.get(elves.size()-1);
   println("Most calories: "+elfWithMostCalories.TotalCalories());
 }
