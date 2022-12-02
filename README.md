@@ -2,11 +2,9 @@
 
 This year I'm going to try creating graphical outputs for each puzzle, using [Processing](https://processing.org/) while I earn my ⭐s.
 
-## Day 1: Calorie Counting
+## Day 1: Calorie Counting ⭐⭐
 
-### Section deep dive
-
-### Techniques leared
+An easy start, but I#m already reminded how clunky Processing and Java are as languages. To be fair, I had over-engineered the Elf class in part 1, thinking that I'd need the seperate values in part 2. In the end I could have just collapsed the values into a single calorie count per elf, and used a normal array, which would have been much less work.
 
 ## Day 2: ???
 
