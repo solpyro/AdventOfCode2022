@@ -10,7 +10,9 @@ An easy start, but I#m already reminded how clunky Processing and Java are as la
 
 This time I tried to keep things simple, to the point that I just coded a switch-case with the possible outcomes for the RPS game.
 
-## Day 3: ???
+## Day 3: Rucksack Reorganization ⭐⭐
+
+Increasingly, I'm reminded how bad an implementation Processing is. I was trying to use ArrayLists, which in Java would have allowed me to filter the list down to unique values (albeit with more implementation than a better language) but Processing for some reason doesn't allow ArrayLists of primatives, and although there's a `IntList` implementation, there is no `CharList` equivilent, or any easy way to convert a `char[]` or `String` into an `IntList`. In the end, writing a class to do the search operations was the simplest solution, although definitely not the most efficient.
 
 ## Day 4: ???
 
