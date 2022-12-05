@@ -6,6 +6,7 @@ String[][] pairs;
 void setup() {
   parse();
   part1();
+  part2();
 }
 
 void parse() {
@@ -28,15 +29,43 @@ void part1() {
   println("Contained pairs: "+containedPairs);
 }
 
-boolean IsFullyContained(String[] pair) {
-  String[] a = pair[0].split("-");
-  String[] b = pair[1].split("-");
+void part2() {
+  int overlappingPairs = 0;
   
-  if(int(a[0])==int(b[0])) return true;
-  
-  if(int(a[0])<int(b[0])){
-    return int(a[1])>=int(b[1]); 
-  } else {
-    return int(b[1])>=int(a[1]);
+  for(String[] pair:pairs) {
+    if(Overlap(pair))
+      overlappingPairs++;
   }
+  
+  println("Overlapping pairs: "+overlappingPairs);
+}
+
+boolean IsFullyContained(String[] pair) {
+  int[] a = ParseRange(pair[0]);
+  int[] b = ParseRange(pair[1]);
+  
+  if(a[0]==b[0]) return true;
+  
+  if(a[0]<b[0]){
+    return a[1]>=b[1]; 
+  } else {
+    return b[1]>=a[1];
+  }
+}
+
+boolean Overlap(String[] pair) {
+  int[] a = ParseRange(pair[0]);
+  int[] b = ParseRange(pair[1]);
+  
+  if(b[0]<=a[1] && b[1]>=a[1]) return true;
+  if(a[0]<=b[1] && a[1]>=b[1]) return true;
+  retrun false;
+}
+
+int[] ParseRange(String range) {
+  int[] iRange = new int[2];
+  String[] sRange = range.split("-");
+  iRange[0] = int(sRange[0]);
+  iRange[1] = int(sRange[1]);
+  return iRange;
 }
