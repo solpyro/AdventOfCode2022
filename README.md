@@ -18,9 +18,9 @@ Increasingly, I'm reminded how bad an implementation Processing is. I was trying
 
 After a little struggle with the `a = b` edge case, I had my first star. The second task was simple enough that I also slightly refactored the parsing, although not so much that it all moved into the parsing routine. (lazy coder!)
 
-## Day 5: Supply Stacks
+## Day 5: Supply Stacks ⭐
 
-This is the first time I can imagine using the graphical part of Processing. But first I had to parse the data and that was complicated enough that it got it's own class.
+This is the first time I can imagine using the graphical part of Processing. But first I had to parse the data and that was complicated enough that it got it's own class. Once I had the data structure laid out, part 1 was pretty straightforward.
 
 ## Day 6: ???
 
