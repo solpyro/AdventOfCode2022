@@ -5,9 +5,6 @@ String file = "data.txt";
 
 Folder root;
 
-StringList[] stacks;
-String[] instructions;
-
 void setup() {
   parse();
   part1();
@@ -41,7 +38,7 @@ void parse() {
         } else {
           String fileName = Parse.fileName(line);
           if(!current.FileExists(fileName))
-          current.Files.add(new File(Parse.fileName(line), Parse.fileSize(line)));
+            current.Files.add(new File(Parse.fileName(line), Parse.fileSize(line)));
         }
       }
    }
