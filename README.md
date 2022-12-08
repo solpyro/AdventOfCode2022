@@ -30,7 +30,11 @@ Simple one-line inputs (and having multiple examples) meant I had to rework my l
 
 Did I have to write a full folder system? Probably not. Havce I checked that the parsing works correctly? Nope.
 
-## Day 8: ???
+The parse _seems_ to work perfectly, and the test data gives me the predicted answer, but my real input seems to be cinsistently falling short. I even had to resort to asking on the [subreddit](https://www.reddit.com/r/adventofcode/comments/zgcvdx/2022_day_7_part_1_my_solution_works_for_the/).
+
+## Day 8: Treetop Tree House ⭐
+
+Something quick and simple to visualise at last! After a little stumble, due to some badly copied code, I thought I was cursed with forever low-balling my answers. But having rectified that, part 1 was in the bag. The visualisation will cycle through `vanilla trees` and `visible trees`.
 
 ## Day 9: ???
 
