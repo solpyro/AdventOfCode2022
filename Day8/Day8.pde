@@ -9,7 +9,7 @@ int maxTrees;
 void setup() {
   parse();
   part1();
-  //part2();
+  part2();
 
   size(990, 990);
   noLoop();
