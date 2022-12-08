@@ -13,13 +13,22 @@ String[] instructions;
 void setup() {
   for(String stream:data) {
     part1(stream);
+    part2(stream);
   }
 }
 
 void part1(String stream) {
-  for(int i=0; i<stream.length()-4;i++) {
-    if(AreUniqueChars(stream.substring(i,i+4))){
-      println("marker "+stream.substring(i,i+4)+" found at "+(i+4));
+  UniqueTokenSearch(stream,4);
+}
+
+void part2(String stream) {
+  UniqueTokenSearch(stream,14);
+}
+  
+void UniqueTokenSearch(String stream, int tokenLength) {
+  for(int i=0; i<stream.length()-tokenLength;i++) {
+    if(AreUniqueChars(stream.substring(i,i+tokenLength))){
+      println("marker "+stream.substring(i,i+tokenLength)+" found at "+(i+tokenLength));
       break;
     }
   }

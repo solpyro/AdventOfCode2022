@@ -22,9 +22,9 @@ After a little struggle with the `a = b` edge case, I had my first star. The sec
 
 This is the first time I can imagine using the graphical part of Processing. But first I had to parse the data and that was complicated enough that it got it's own class. Once I had the data structure laid out, part 1 was pretty straightforward. Since my part 1 operated on the parsed data model, I'm unable to run part 1 and 2 sequentially but, other than that, reworking the algorithm to move the stack was simple enough. Another lazy coder issue though: I didn#t bother with a graphical example of the task.
 
-## Day 6: Tuning Trouble ⭐
+## Day 6: Tuning Trouble ⭐⭐
 
-Simple one-line inputs (and having multiple examples) meant I had to rework my layout a little. But the token search for part one was simple enough.
+Simple one-line inputs (and having multiple examples) meant I had to rework my layout a little. But the token search for part 1 was simple enough.Part 2 didn't take much work, just a little refactoring to reuse the token search code.
 
 ## Day 7: ???
 
