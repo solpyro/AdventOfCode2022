@@ -13,14 +13,14 @@ static class Parse {
     return line.indexOf("dir ") == 0;
   }
   static String directoryName(String line) {
-    return line.substring(4);
+    return line.substring(4).trim();
   }
   
-  static int fileSize(String line) {
-    return int(line.substring(0, line.indexOf(" ")));
+  static long fileSize(String line) {
+    return Long.parseLong(line.substring(0, line.indexOf(" "))); //<>//
   }
   
   static String fileName(String line) {
-    return line.substring(line.indexOf(" ")+1);
+    return line.substring(line.indexOf(" ")+1).trim();
   }
 }

@@ -1,9 +1,9 @@
 class File {
   String Name;
-  int Bytes;
+  long Size;
   
-  File(String name, int bytes) {
+  File(String name, long size) {
     Name = name;
-    Bytes = bytes;
+    Size = size;
   }
 }
