@@ -26,7 +26,9 @@ This is the first time I can imagine using the graphical part of Processing. But
 
 Simple one-line inputs (and having multiple examples) meant I had to rework my layout a little. But the token search for part 1 was simple enough.Part 2 didn't take much work, just a little refactoring to reuse the token search code.
 
-## Day 7: ???
+## Day 7: No Space Left On Device
+
+Did I have to write a full folder system? Probably not. Havce I checked that the parsing works correctly? Nope.
 
 ## Day 8: ???
 
