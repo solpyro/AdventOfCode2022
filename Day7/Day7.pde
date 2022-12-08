@@ -35,8 +35,12 @@ void parse() {
         }
       } else {
         if(Parse.isDirectory(line)) {
-          current.Folders.add(new Folder(Parse.directoryName(line), current));
+          String directory = Parse.directoryName(line);
+          if(!current.FolderExists(directory))
+            current.Folders.add(new Folder(directory, current));
         } else {
+          String fileName = Parse.fileName(line);
+          if(!current.FileExists(fileName))
           current.Files.add(new File(Parse.fileName(line), Parse.fileSize(line)));
         }
       }

@@ -19,6 +19,20 @@ class Folder {
     return null;
   }
   
+  boolean FolderExists(String folderName) {
+    for(Folder folder: Folders)
+      if(folder.Name.equals(folderName))
+        return true;
+    return false;
+  }
+  
+  boolean FileExists(String fileName) {
+    for(File file: Files)
+      if(file.Name.equals(fileName))
+        return true;
+    return false;
+  }
+  
   int CountFolders() {
     int count = 1;
     for(Folder folder:Folders)
