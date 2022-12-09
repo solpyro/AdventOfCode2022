@@ -4,10 +4,11 @@ String file = "data.txt";
 Motion[] motions;
 Point start, head, tail;
 PGraphics trace;
+int startTime;
 
 void setup() {
   parse();
-  size(1001,1001);
+  size(401,401);
   background(0);
   
   int midpoint = ceil(width/2f);
@@ -18,6 +19,7 @@ void setup() {
   trace.beginDraw();
   trace.background(0);
   trace.endDraw();
+  startTime = millis();
 }
 int step = 0;
 void draw() {
@@ -35,6 +37,8 @@ void draw() {
   set(head.x, head.y, color(0,255,0));
   
   if(step == motions.length) {
+    int time = millis()-startTime;
+    println("Drawing the path took "+(time/1000f)+"s");
     addTailToTrace();
     noLoop();
     saveFrame(file+".png");
@@ -55,37 +59,6 @@ void parse() {
   motions = new Motion[steps.length];
   for(int i=0; i<steps.length; i++)
     motions[i] = new Motion(steps[i]);
-}
-void updateHead(char dir) {
-  switch(dir) {
-    case 'U':
-      head.y--;
-      break;
-    case 'D':
-      head.y++;
-      break;
-    case 'L':
-      head.x--;
-      break;
-    case 'R':
-      head.x++;
-      break;
-    default: throw new RuntimeException("Cannot move in direction "+dir);
-  }
-}
-void updateTail() {
-  int xDiff = tail.x-head.x;
-  int yDiff = tail.y-head.y;
-  if(abs(xDiff)>1) {
-    tail.x -= abs(xDiff)/xDiff;
-    if(abs(yDiff)>0)
-      tail.y -= abs(yDiff)/yDiff;
-    return;
-  } else if(abs(yDiff)>1) {
-    tail.y -= abs(yDiff)/yDiff;
-    if(abs(xDiff)>0)
-      tail.x -= abs(xDiff)/xDiff;
-  }
 }
 
 void part1() {
