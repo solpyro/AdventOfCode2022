@@ -1,5 +1,5 @@
-String file = "test.txt";
-//String file = "data.txt"; 
+//String file = "test.txt";
+String file = "data.txt"; 
 
 int[][] trees;
 boolean[][] isVisible;
@@ -48,7 +48,7 @@ void draw() {
             : white);
           break;
         case 2:
-          fill(255*visibleTrees[x][y]/maxTrees);
+          fill(255*visibleTrees[y][x]/maxTrees);
       }
       ellipse(x * step + halfStep, yPos, diameter, diameter);
     }

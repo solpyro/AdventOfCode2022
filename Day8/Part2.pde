@@ -12,44 +12,60 @@ void part2() {
   println("Most visible trees are: "+maxTrees);
 }
 int countVisibleTrees(int i, int j) {
-  return countLeft(i,j)
+  return countUp(i,j)
+       * countLeft(i,j)
        * countRight(i,j)
-       * countUp(i,j)
        * countDown(i,j);
 }
-int countLeft(int i, int j) {
+int countUp(int i, int j) {
+  if(i==0) return 0;
+  
   int counter = 0;
   int n = i-1;
   while(n>=0 && trees[n][j]<trees[i][j]) {
     counter++;
     n--;
   }
+  if(n>=0 && trees[n][j]>=trees[i][j]) counter++;
+  
   return counter;
 }
-int countRight(int i, int j) {
-  int counter = 0;
-  int n = i+1;
-  while(n<trees.length && trees[n][j]<trees[i][j]) {
-    counter++;
-    n++;
-  }
-  return counter;
-}
-int countUp(int i, int j) {
+int countLeft(int i, int j) {
+  if(j==0) return 0;
+  
   int counter = 0;
   int n = j-1;
   while(n>=0 && trees[i][n]<trees[i][j]) {
     counter++;
     n--;
   }
+  if(n>=0 && trees[i][n]>=trees[i][j]) counter++;
+  
   return counter;
 }
-int countDown(int i, int j) {
+int countRight(int i, int j) {
+  if(j == trees.length-1) return 0;
+    
   int counter = 0;
   int n = j+1;
-  while(n<visibleTrees[i].length && visibleTrees[i][n]<visibleTrees[i][j]) {
+  while(n<trees.length && trees[i][n]<trees[i][j]) {
     counter++;
     n++;
   }
+  if(n<trees.length && trees[i][n]>=trees[i][j]) counter++;
+  
+  return counter;
+}
+int countDown(int i, int j) {
+  if(i == trees.length-1) return 0;
+  
+  int counter = 0;
+  int n = i+1;
+  while(n<trees.length && trees[n][j]<trees[i][j]) {
+    counter++;
+    n++;
+  }
+  if(n<trees.length && trees[n][j]>=trees[i][j]) counter++;
+  
   return counter;
 }

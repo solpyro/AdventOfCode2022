@@ -34,9 +34,11 @@ The parse _seems_ to work perfectly, and the test data gives me the predicted an
 
 Part 2 was much simpler, and it turned out the list of sizes I'd generated for part 1 were all I needed; the directory tree is completely useless!
 
-## Day 8: Treetop Tree House ⭐
+## Day 8: Treetop Tree House ⭐⭐
 
-Something quick and simple to visualise at last! After a little stumble, due to some badly copied code, I thought I was cursed with forever low-balling my answers. But having rectified that, part 1 was in the bag. The visualisation will cycle through `vanilla trees` and `visible trees`.
+Something quick and simple to visualise at last! After a little stumble, due to some badly copied code, I thought I was cursed with forever low-balling my answers. But having rectified that, part 1 was in the bag. The visualisation will cycle through `vanilla trees` and `visible trees` when you press any key.
+
+Figuring out the counting algorithm for higest tree took some time and trial and error, but eventially I was getting expected numbers for the example. The visualisation has a third option now colouring each tree in a gradient of how many trees are visible.
 
 ## Day 9: ???
 
