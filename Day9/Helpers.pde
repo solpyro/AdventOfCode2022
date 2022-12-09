@@ -38,3 +38,13 @@ void addTailToTrace() {
   trace.updatePixels();
   trace.endDraw();
 }
+
+void countTracePixels() {
+  int counter = 0;
+  trace.loadPixels();
+  for(color px: trace.pixels) {
+    if(px != color(0))
+      counter++;
+  }
+  println(counter+" pixels were visited by the tail");
+}

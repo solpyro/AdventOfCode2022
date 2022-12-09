@@ -4,8 +4,8 @@ String file = "data.txt";
 
 Motion[] motions;
 Point start;
-//Point[] rope = new Point[2];
-Point[] rope = new Point[10];
+//Point[] rope = new Point[2]; //part1
+Point[] rope = new Point[10]; //part2
 PGraphics trace;
 int startTime;
 
@@ -45,8 +45,7 @@ void draw() {
     addTailToTrace();
     noLoop();
     saveFrame(file+"_"+rope.length+".png");
-    part1();
-    //part2();
+    countTracePixels();
   }
 }
 
@@ -55,14 +54,4 @@ void parse() {
   motions = new Motion[steps.length];
   for(int i=0; i<steps.length; i++)
     motions[i] = new Motion(steps[i]);
-}
-
-void part1() {
-  int counter = 0;
-  trace.loadPixels();
-  for(color px: trace.pixels) {
-    if(px != color(0))
-      counter++;
-  }
-  println(counter+" pixels were visited by the tail");
 }
