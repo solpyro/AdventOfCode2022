@@ -1,8 +1,11 @@
 //String file = "test.txt";
+//String file = "test2.txt";
 String file = "data.txt"; 
 
 Motion[] motions;
-Point start, head, tail;
+Point start;
+//Point[] rope = new Point[2];
+Point[] rope = new Point[10];
 PGraphics trace;
 int startTime;
 
@@ -10,11 +13,14 @@ void setup() {
   parse();
   size(401,401);
   background(0);
+  noStroke();
   
   int midpoint = ceil(width/2f);
   start = new Point(midpoint,midpoint);
-  head = new Point(midpoint,midpoint);
-  tail = new Point(midpoint,midpoint);
+  for(int i=0;i<rope.length;i++) {
+    rope[i] = new Point(midpoint,midpoint);
+    if(i>0) rope[i].head = rope[i-1];
+  }
   trace = createGraphics(width, height);
   trace.beginDraw();
   trace.background(0);
@@ -26,32 +32,22 @@ void draw() {
   addTailToTrace();
   image(trace, 0, 0);
   
-  updateHead(motions[step].Direction);
-  updateTail();
+  moveRope(motions[step].Direction);
+    
+  drawLandmarks();
   
   motions[step].Steps--;
   if(motions[step].Steps == 0) step++;
-  
-  set(start.x, start.y, color(0,0,255));
-  set(tail.x, tail.y, color(255,0,0));
-  set(head.x, head.y, color(0,255,0));
   
   if(step == motions.length) {
     int time = millis()-startTime;
     println("Drawing the path took "+(time/1000f)+"s");
     addTailToTrace();
     noLoop();
-    saveFrame(file+".png");
+    saveFrame(file+"_"+rope.length+".png");
     part1();
     //part2();
   }
-}
-void addTailToTrace() {
-  trace.beginDraw();
-  trace.loadPixels();
-  trace.pixels[tail.y*trace.width + tail.x] = color(255);
-  trace.updatePixels();
-  trace.endDraw();
 }
 
 void parse() {
@@ -64,7 +60,7 @@ void parse() {
 void part1() {
   int counter = 0;
   trace.loadPixels();
-  for(color px:trace.pixels) {
+  for(color px: trace.pixels) {
     if(px != color(0))
       counter++;
   }
