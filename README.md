@@ -40,7 +40,11 @@ Something quick and simple to visualise at last! After a little stumble, due to 
 
 Figuring out the counting algorithm for higest tree took some time and trial and error, but eventially I was getting expected numbers for the example. The visualisation has a third option now colouring each tree in a gradient of how many trees are visible.
 
-## Day 9: ???
+## Day 9: Rope Bridge ⭐
+
+Another one begging to be visualised, although this feels like the kind of simulation that could get out of hand by part 2. Coding up the rules for part 1 was easy enough, although running my input took **3 minutes and 15 seconds**! I did however get to see this:
+
+![Day 9 Part 1 - Tail's path](Day9/data.txt.png)
 
 ## Day 10: ???
 
