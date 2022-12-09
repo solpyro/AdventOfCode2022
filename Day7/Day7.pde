@@ -48,9 +48,9 @@ void parse() {
 }
 
 void part1() {
-  HashMap<String,Long> directories = new HashMap<String,Long>();
+  ArrayList<Tuple<String,Long>> directories = new ArrayList<Tuple<String,Long>>(); 
   
-  directories.put(root.Name, root.Size());
+  directories.add(new Tuple<String,Long>(root.Name, root.Size()));
   println(root.Name, root.Size());
   AddFoldersToDictionary(root.Folders, directories, "-"); 
  
@@ -66,9 +66,9 @@ void part1() {
   println("Total folder sizes less than 100k: "+totalSizesLessThan100k);
 }
 
-void AddFoldersToDictionary(ArrayList<Folder> folders, HashMap<String,Long> dict, String indent) {
+void AddFoldersToDictionary(ArrayList<Folder> folders, ArrayList<Tuple<String,Long>> dict, String indent) {
   for(Folder folder: folders) {
-    dict.put(folder.Name, folder.Size());
+    dict.add(new Tuple(folder.Name, folder.Size()));
     println(indent, folder.Name, folder.Size());
     AddFoldersToDictionary(folder.Folders, dict, indent+"-");
   }
