@@ -26,11 +26,13 @@ This is the first time I can imagine using the graphical part of Processing. But
 
 Simple one-line inputs (and having multiple examples) meant I had to rework my layout a little. But the token search for part 1 was simple enough.Part 2 didn't take much work, just a little refactoring to reuse the token search code.
 
-## Day 7: No Space Left On Device
+## Day 7: No Space Left On Device ⭐⭐
 
 Did I have to write a full folder system? Probably not. Havce I checked that the parsing works correctly? Nope.
 
-The parse _seems_ to work perfectly, and the test data gives me the predicted answer, but my real input seems to be cinsistently falling short. I even had to resort to asking on the [subreddit](https://www.reddit.com/r/adventofcode/comments/zgcvdx/2022_day_7_part_1_my_solution_works_for_the/).
+The parse _seems_ to work perfectly, and the test data gives me the predicted answer, but my real input seems to be cinsistently falling short. I even had to resort to asking on the [subreddit](https://www.reddit.com/r/adventofcode/comments/zgcvdx/2022_day_7_part_1_my_solution_works_for_the/). Thanks to some hints from [u/kg959](https://www.reddit.com/user/kg959/) in the form of more test cases, I realised that by using a HashMap, I'd made the assumption that folder names would be unique across the file system; obviously not the case.
+
+Part 2 was much simpler, and it turned out the list of sizes I'd generated for part 1 were all I needed; the directory tree is completely useless!
 
 ## Day 8: Treetop Tree House ⭐
 
