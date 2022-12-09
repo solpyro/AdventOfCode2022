@@ -2,15 +2,16 @@ import java.util.Map;
 
 //String file = "test.txt";
 //String file = "kg959_5.txt";
-String file = "kg959_7.txt";
-//String file = "data.txt"; 
+//String file = "kg959_7.txt";
+String file = "data.txt"; 
 
 Folder root;
+ArrayList<Tuple<String,Long>> directories;
 
 void setup() {
   parse();
   part1();
-  //part2();
+  part2();
 }
 
 void parse() {
@@ -48,28 +49,44 @@ void parse() {
 }
 
 void part1() {
-  ArrayList<Tuple<String,Long>> directories = new ArrayList<Tuple<String,Long>>(); 
+  directories = new ArrayList<Tuple<String,Long>>(); 
   
   directories.add(new Tuple<String,Long>(root.Name, root.Size()));
   println(root.Name, root.Size());
   AddFoldersToDictionary(root.Folders, directories, "-"); 
  
   long totalSizesLessThan100k = 0;
-  for(Map.Entry<String,Long> e: directories.entrySet()) {
+  for(Tuple<String,Long> dir: directories) {
     //println(e.getKey(), e.getValue());
-    if(e.getValue()<=100000) {
-      totalSizesLessThan100k += e.getValue();
+    if(dir.Second<=100000) {
+      totalSizesLessThan100k += dir.Second;
     }
-    println(e.getValue(), totalSizesLessThan100k);
+    println(dir.Second, totalSizesLessThan100k);
   }
   
   println("Total folder sizes less than 100k: "+totalSizesLessThan100k);
 }
-
 void AddFoldersToDictionary(ArrayList<Folder> folders, ArrayList<Tuple<String,Long>> dict, String indent) {
   for(Folder folder: folders) {
     dict.add(new Tuple(folder.Name, folder.Size()));
     println(indent, folder.Name, folder.Size());
     AddFoldersToDictionary(folder.Folders, dict, indent+"-");
   }
+}
+
+void part2() {
+  long freeSpace = 70000000l - root.Size();
+  long deletionTarget = 30000000 - freeSpace;
+  println("space to free: "+deletionTarget);
+  
+  long smallestFolderSize = root.Size();
+  String smallestFolderName = root.Name;
+  
+  for(Tuple<String,Long> dir: directories)
+    if(dir.Second > deletionTarget && dir.Second < smallestFolderSize) {
+      smallestFolderSize = dir.Second;
+      smallestFolderName = dir.First;
+    }
+  
+  println("The smallest biggest folder is "+smallestFolderName+" ("+smallestFolderSize+")");
 }
