@@ -61,7 +61,9 @@ The challenge today appears to be parsing the input data. It's eslecially proble
 Now that we're running for so many rounds and the worry factor never reduces,I had to rework the item values as `long`s to avoid the int overflow issue. That brought it's own issues in that the calculations appear to be incorrect now, but after some careful review of the recent changes and restoring the logs I had for part 1, I was getting correct values for part 1 again. Running part 2 reveled that even `long` isn't big enough, so it#s time to rework (again) using `BigInteger`. 
 
 That solution _might_ work if I haveenough ram and time, but I never saw it progress beyond about 10%, so I dug around the subreddit to see what I'd missed. It turns out
+
 > You'll need to **find another way to keep your worry levels manageable**.
+
 did not mean `divide by 1` but that I should calculate a valid number ti divide by. I had a vague memory, from my A-level Maths, as to what I should do and checking through some of the solutions confirmed my hunch. Now my code runs at a decent speed, but yields the wrong answer again. Thanks to a small hint from [u/1234abcddcba4321](https://www.reddit.com/r/adventofcode/comments/zih7gf/comment/izrck61/) I'd fogured out the bug in my code and had subdued the monkeys on my back. I elected not te remove the `BigInteger` from my code because there are other things to do with my life.
 
 ## Day 12: ???
