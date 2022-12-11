@@ -8,14 +8,11 @@ void parse() {
     
   for(int i=0; i<troop.length; i++) {
     parseMonkey(troop[i],subset(input, 7*i,6));
-    
-    println("----- Parse Monkey",i,"-----");
-    println("Monkey:",troop[i]);
-    println("Items:",troop[i].Items);
-    println("Operation:",troop[i].Operation,troop[i].OperationValue);
-    println("Test: /",troop[i].TestValue);
-    println("True Monkey",troop[i].TrueMonkey);
-    println("False Monkey",troop[i].FalseMonkey);
+  }
+  
+  if(calmFactor == BigInteger.ONE) {
+    for(Monkey monkey: troop) 
+      calmFactor = calmFactor.multiply(monkey.TestValue);
   }
 }
 
@@ -28,8 +25,9 @@ void parseMonkey(Monkey monkey, String[] lines) {
 }
 
 void setItems(Monkey monkey, String itemsLine) {
-  int[] items = int(splitTokens(split(itemsLine,": ")[1],", "));
-  monkey.Items.append(items);
+  String[] items = splitTokens(split(itemsLine,": ")[1],", ");
+  for(String item: items)
+    monkey.Items.add(new BigInteger(item));
 }
 
 void setOperation(Monkey monkey, String operationLine) {
@@ -42,25 +40,30 @@ void setOperation(Monkey monkey, String operationLine) {
     if(operationLine.indexOf('+') > -1) {
       monkey.Operation = '+';
     }
-    monkey.OperationValue = getNumberFromEndOfString(operationLine);
+    monkey.OperationValue = getBigIntFromEndOfString(operationLine);
   }
 }
 
 void setTest(Monkey monkey, String testLine) {
-  monkey.TestValue = getNumberFromEndOfString(testLine);
+  monkey.TestValue = getBigIntFromEndOfString(testLine);
 }
 
 void setTrueMonkey(Monkey monkey, String trueMonkeyLine) {
-  int target = getNumberFromEndOfString(trueMonkeyLine);
+  int target = getIntFromEndOfString(trueMonkeyLine);
   monkey.TrueMonkey = troop[target];
 }
 
 void setFalseMonkey(Monkey monkey, String falseMonkeyLine) {
-  int target = getNumberFromEndOfString(falseMonkeyLine);
+  int target = getIntFromEndOfString(falseMonkeyLine);
   monkey.FalseMonkey = troop[target];
 }
 
-int getNumberFromEndOfString(String line) {
+BigInteger getBigIntFromEndOfString(String line) {
+  String[] tokens = splitTokens(line);
+  return new BigInteger(tokens[tokens.length-1]);
+}
+
+int getIntFromEndOfString(String line) {
   String[] tokens = splitTokens(line);
   return int(tokens[tokens.length-1]);
 }

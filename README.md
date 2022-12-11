@@ -54,9 +54,15 @@ Part 2 required some code rearrangement, but it wasn't too much work to extend m
 
 Dear diary, today I made a tiny Atari emulator, apparently. I hit a wall in part 1 for a little while, since I'd somehow read the instructions to check the `X` value every _20_ cycles, rather than 40. But after I'd rectified that mistake, the solutions to part 1 and 2 came pretty easily. It helped that I'd already implemented something close to the CRT when I'd created an oscilloscope to check the path `X` travelled during the program.
 
-## Day 11: Monkey in the Middle ⭐
+## Day 11: Monkey in the Middle ⭐⭐
 
-The challenge today appears to be parsing the input data. It's eslecially problematic as Java (and therefore Processing) don't allow for passing functions as arguments. Fortunately the monkeys for my inputs all use one of three operations so I can just use a flag instead and hardcode the operations. After fighting with the `x ^= n` assignment operator, which doesn#t seem to do `x = x ^ n` like the docs say, but instead (in the one instance it was used) subtracted 2 from the value, I#d gotten my part 1 star.
+The challenge today appears to be parsing the input data. It's eslecially problematic as Java (and therefore Processing) don't allow for passing functions as arguments. Fortunately the monkeys for my inputs all use one of three operations so I can just use a flag instead and hardcode the operations. After fighting with the `x ^= n` assignment operator, which doesn#t seem to do `x = x ^ n` like the docs say, but instead (in the one instance it was used) subtracted 2 from the value, I'd gotten my part 1 star.
+
+Now that we're running for so many rounds and the worry factor never reduces,I had to rework the item values as `long`s to avoid the int overflow issue. That brought it's own issues in that the calculations appear to be incorrect now, but after some careful review of the recent changes and restoring the logs I had for part 1, I was getting correct values for part 1 again. Running part 2 reveled that even `long` isn't big enough, so it#s time to rework (again) using `BigInteger`. 
+
+That solution _might_ work if I haveenough ram and time, but I never saw it progress beyond about 10%, so I dug around the subreddit to see what I'd missed. It turns out
+> You'll need to **find another way to keep your worry levels manageable**.
+did not mean `divide by 1` but that I should calculate a valid number ti divide by. I had a vague memory, from my A-level Maths, as to what I should do and checking through some of the solutions confirmed my hunch. Now my code runs at a decent speed, but yields the wrong answer again. Thanks to a small hint from [u/1234abcddcba4321](https://www.reddit.com/r/adventofcode/comments/zih7gf/comment/izrck61/) I'd fogured out the bug in my code and had subdued the monkeys on my back. I elected not te remove the `BigInteger` from my code because there are other things to do with my life.
 
 ## Day 12: ???
 
