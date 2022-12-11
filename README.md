@@ -46,7 +46,7 @@ Another one begging to be visualised, although this feels like the kind of simul
 
 ![Day 9 Part 1 - Tail's path](Day9/data.txt.png)
 
-Part 2 required some code rearrangement, but it wasn#t too much work to extend my existing process. And somehow the rearrangements got my processing time down to **3 minutes and 11 seconds** even though we're dealing with more points in the rope.
+Part 2 required some code rearrangement, but it wasn't too much work to extend my existing process. And somehow the rearrangements got my processing time down to **3 minutes and 11 seconds** even though we're dealing with more points in the rope.
 
 ![Day 9 Part 2 - Tail's path](Day9/data.txt_10.png)
 
@@ -54,7 +54,9 @@ Part 2 required some code rearrangement, but it wasn#t too much work to extend m
 
 Dear diary, today I made a tiny Atari emulator, apparently. I hit a wall in part 1 for a little while, since I'd somehow read the instructions to check the `X` value every _20_ cycles, rather than 40. But after I'd rectified that mistake, the solutions to part 1 and 2 came pretty easily. It helped that I'd already implemented something close to the CRT when I'd created an oscilloscope to check the path `X` travelled during the program.
 
-## Day 11: ???
+## Day 11: Monkey in the Middle ⭐
+
+The challenge today appears to be parsing the input data. It's eslecially problematic as Java (and therefore Processing) don't allow for passing functions as arguments. Fortunately the monkeys for my inputs all use one of three operations so I can just use a flag instead and hardcode the operations. After fighting with the `x ^= n` assignment operator, which doesn#t seem to do `x = x ^ n` like the docs say, but instead (in the one instance it was used) subtracted 2 from the value, I#d gotten my part 1 star.
 
 ## Day 12: ???
 
