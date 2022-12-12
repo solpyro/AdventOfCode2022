@@ -10,7 +10,7 @@ void part1() {
   
   populateWeightMap();
   
-  findShortestPath();
+  shortestPath = findShortestPath(start);
   
   println("Shortest path is: ",shortestPath.size());
 }
@@ -76,14 +76,15 @@ void populateWeightMap() {
   }
 }
   
-void findShortestPath() {
-  shortestPath = initList(start);
+ArrayList<int[]> findShortestPath(int[] start) {
+  ArrayList<int[]> path = initList(start);
   while(true) {
-    int[] nextBestCoord = findNextBestCoord(shortestPath.get(shortestPath.size()-1));
+    int[] nextBestCoord = findNextBestCoord(path.get(path.size()-1));
     if(equal(nextBestCoord,end))
       break;
-    shortestPath.add(nextBestCoord);
+    path.add(nextBestCoord);
   }
+  return path;
 }
 int[] findNextBestCoord(int[] currentCoord) {
   int[] nextBestCoord = new int[2];

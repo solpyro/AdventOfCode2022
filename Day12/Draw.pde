@@ -6,7 +6,15 @@ void drawMap() {
 void drawPath() {
   drawWeightedTerrain();
   drawCliffs();
-  drawShortestPath();
+  drawPath(shortestPath, color(0,0,255));
+  drawTerminals();
+}
+
+void drawBestPath() {
+  drawWeightedTerrain();
+  drawCliffs();
+  drawPossiblePaths(color(128,128,255));
+  drawPath(bestPath, color(0,0,255));
   drawTerminals();
 }
 
@@ -56,13 +64,17 @@ void drawHorizontalBarriers(int y){
       line(x*5,y*5,x*5+5,y*5);
 }
 
-void drawShortestPath() {
-  stroke(0,0,255);
-  for(int i=0; i<shortestPath.size()-1; i++)
-    drawLine(shortestPath.get(i),shortestPath.get(i+1));
-  drawLine(shortestPath.get(shortestPath.size()-1),end);
+void drawPossiblePaths(color pathColor) {
+  for(ArrayList<int[]> path: listOfPaths)
+    drawPath(path, pathColor);
 }
- void drawLine(int[] start, int[] end) {
+void drawPath(ArrayList<int[]> path, color pathColor) {
+  stroke(pathColor);
+  for(int i=0; i<path.size()-1; i++)
+    drawLine(path.get(i),path.get(i+1));
+  drawLine(path.get(path.size()-1),end);
+}
+void drawLine(int[] start, int[] end) {
   line(start[0]*5+3,start[1]*5+3,end[0]*5+3,end[1]*5+3);
 }
 
