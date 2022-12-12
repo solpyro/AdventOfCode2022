@@ -42,7 +42,10 @@ class Monkey {
       default: throw new RuntimeException("Unknown operation: "+Operation);
     }
     
-    return val.divide(calmFactor);
+    if(calmFactor.compareTo(BigInteger.TEN)<0)
+      return val.divide(calmFactor);
+    else
+      return val.remainder(calmFactor);
   }
   
   Monkey ThrowTo(BigInteger val) {
