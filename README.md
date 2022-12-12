@@ -66,9 +66,13 @@ That solution _might_ work if I haveenough ram and time, but I never saw it prog
 
 did not mean `divide by 1` but that I should calculate a valid number ti divide by. I had a vague memory, from my A-level Maths, as to what I should do and checking through some of the solutions confirmed my hunch. Now my code runs at a decent speed, but yields the wrong answer again. Thanks to a small hint from [u/1234abcddcba4321](https://www.reddit.com/r/adventofcode/comments/zih7gf/comment/izrck61/) I'd fogured out the bug in my code and had subdued the monkeys on my back. I elected not te remove the `BigInteger` from my code because there are other things to do with my life.
 
-## Day 12: Hill Climbing Algorithm
+## Day 12: Hill Climbing Algorithm ⭐
 
 I don't really have the energy to deal with this after a day's work. I've parsed the data and got a nice rendering of the terrain, along with some border walls for squares where the gradient is too steep, but before I can continue I'll need to refresh my knowledge of pathfinding algorithms.
+
+I vaguely remembered the layout of the [sample algorith](https://en.wikipedia.org/wiki/Pathfinding#Sample_algorithm) from last year's challenges and got it implemented without too much difficulty. Once I'd completed the heatmap for the cells, I realised there was some issue with getting to the top of the mountain, and it wasn't until I saw [this meme](https://www.reddit.com/r/adventofcode/comments/zjqz5y/2022_day_12_is_my_input_invalid_or/) on the subreddit that I realised my folly. Filling out the rest of the algorithm was simple enough, just slow going, and eventually I had my path:
+
+![Path to the top of the mountian](Day12/path.png) 
 
 ## Day 13: ???
 
