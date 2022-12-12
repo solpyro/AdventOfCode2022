@@ -68,6 +68,8 @@ did not mean `divide by 1` but that I should calculate a valid number ti divide 
 
 ## Day 12: Hill Climbing Algorithm
 
+I don't really have the energy to deal with this after a day's work. I've parsed the data and got a nice rendering of the terrain, along with some border walls for squares where the gradient is too steep, but before I can continue I'll need to refresh my knowledge of pathfinding algorithms.
+
 ## Day 13: ???
 
 ## Day 14: ???
