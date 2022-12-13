@@ -84,6 +84,8 @@ TFW your part 1 solution is complete enough that part 2 is almost nothing. It to
 
 I felt my wheels spinning as I tried to figure out how to parse this one, and after a few hours without inspiration, I had a look through the solutions megathread and took inspiration from [u/Premun](https://www.reddit.com/r/adventofcode/comments/zkmyh4/comment/j037c4c/?utm_source=share&utm_medium=web2x&context=3)'s parsing solution. Of course, implementing that in Processing's perculiar flavour of Java took a little more effort, but eventually I had the data, and I even had a working stringifier so I can print the packets to the console. The comparison algorithm was also heavily borrowed from u/Premun, so that first star is partially theirs.
 
+That stringifier's going to come in handy for Part 2. I'm just going to have to decide on the best way to sort an immutable list in Java. (Processing's `ArrayList.sort` method doesn't seem to work)
+
 ## Day 14: ???
 
 ## Day 15: ???
