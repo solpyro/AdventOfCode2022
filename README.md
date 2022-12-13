@@ -70,13 +70,15 @@ did not mean `divide by 1` but that I should calculate a valid number ti divide 
 
 I don't really have the energy to deal with this after a day's work. I've parsed the data and got a nice rendering of the terrain, along with some border walls for squares where the gradient is too steep, but before I can continue I'll need to refresh my knowledge of pathfinding algorithms.
 
+![The local terrain](Day12/map.png) 
+
 I vaguely remembered the layout of the [sample algorith](https://en.wikipedia.org/wiki/Pathfinding#Sample_algorithm) from last year's challenges and got it implemented without too much difficulty. Once I'd completed the heatmap for the cells, I realised there was some issue with getting to the top of the mountain, and it wasn't until I saw [this meme](https://www.reddit.com/r/adventofcode/comments/zjqz5y/2022_day_12_is_my_input_invalid_or/) on the subreddit that I realised my folly. Filling out the rest of the algorithm was simple enough, just slow going, and eventually I had my path:
 
 ![Path to the top of the mountian](Day12/path.png) 
 
 TFW your part 1 solution is complete enough that part 2 is almost nothing. It took me half an hour to complete, and a lot of that was getting the graphics to work:
 
-![Path to the top of the mountian](Day12/bestPath.png) 
+![Best path to the top of the mountian](Day12/bestPath.png) 
 
 ## Day 13: ???
 
