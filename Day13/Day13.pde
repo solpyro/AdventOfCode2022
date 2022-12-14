@@ -1,5 +1,5 @@
-String file = "test.txt";
-//String file = "data.txt"; 
+//String file = "test.txt";
+String file = "data.txt"; 
 
 Packet[] packets;
 
@@ -22,7 +22,7 @@ void parse() {
 void part1() {
   int orderedPairs = 0;
   for(int i=0;i<packets.length/2;i++) {
-    if(packets[2*i].isLessThan(packets[2*i+1])<1) 
+    if(packets[2*i].compare(packets[2*i+1])<1) 
       orderedPairs += (i+1);
   }
   println("Sum of ordered pairs:",orderedPairs);
@@ -33,7 +33,10 @@ void part2() {
   packets = (Packet[])append(packets,FromJSON(DIVIDER2));
   packets = (Packet[])append(packets,FromJSON(DIVIDER6));
   
-  //sort all packets - ugh!
+  for(int i=0;i<packets.length-1;i++)
+    for(int j=packets.length-1;j>i;j--)
+      if(packets[j].compare(packets[j-1])<0)
+        swapPackets(j,j-1);
   
   int i=0, index2 = 0, index6 = 0;
   while(index2==0 || index6==0) {
@@ -44,5 +47,10 @@ void part2() {
     i++;
   }
   
-  println(index2, index6,"Decoder key:",index2*index6);
+  println("Decoder key:",index2*index6);
+}
+void swapPackets(int a, int b) {
+  Packet temp = packets[a];
+  packets[a] = packets[b];
+  packets[b] = temp;
 }

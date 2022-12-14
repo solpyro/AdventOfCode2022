@@ -9,7 +9,7 @@ Packet FromJSON(int number) {
 }
 
 abstract class Packet {
-  int isLessThan(Packet p2) {
+  int compare(Packet p2) {
     Packet p1 = this;
     
     if((p1 instanceof Number) && (p2 instanceof Number)) {
@@ -34,7 +34,7 @@ abstract class Packet {
       }
       
       if(i<length1 && i<length2) {
-        int result = l1.values[i].isLessThan(l2.values[i]);
+        int result = l1.values[i].compare(l2.values[i]);
         if(result != 0)
           return result;
         continue;
