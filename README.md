@@ -86,7 +86,15 @@ I felt my wheels spinning as I tried to figure out how to parse this one, and af
 
 That stringifier's going to come in handy for Part 2. I'm just going to have to decide on the best way to sort an immutable list in Java (Processing's `ArrayList.sort` method doesn't seem to work). In the morning, with _some_ sleep, I quickly whipped up the bubble sort and got the second star.
 
-## Day 14: ???
+## Day 14: Regolith Reservoir ⭐
+
+I thought to draw this much larger and animate the sand grains though each of their positions as they fall, but the logic was much cleaner if I just use the pixel array, so today's visualisation is for ants.
+
+![Part 1](Day14/part1.png)
+
+Part 2 was a pretty easy extension of the existing code.
+
+![Part 2](Day14/part2.png)
 
 ## Day 15: ???
 
