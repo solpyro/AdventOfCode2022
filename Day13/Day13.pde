@@ -35,7 +35,7 @@ void part2() {
   
   for(int i=0;i<packets.length-1;i++)
     for(int j=packets.length-1;j>i;j--)
-      if(packets[j].compare(packets[j-1])<0)
+      if(packets[j].compare(packets[j-1])<1)
         swapPackets(j,j-1);
   
   int i=0, index2 = 0, index6 = 0;
