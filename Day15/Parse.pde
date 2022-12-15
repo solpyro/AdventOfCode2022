@@ -10,22 +10,27 @@ void parse() {
   
   reduceBeaconsToUnique();
   getBounds();
-  
+    
   println(sensors.size(),"sensors,",beacons.size(),"unique known beacons");
   println("Dimentions: (",minX,minY,"),(",maxX,maxY,")");
-  println("Size: ",maxX-minX,"x",maxY-minY);
+  println("Map Size: ",maxX-minX+1,"x",maxY-minY+1);
 }
 
 void parse(String line) {
   String[][] matches = matchAll(line, "x=(-?\\d+), y=(-?\\d+)");
   sensors.add(new int[]{
     int(matches[0][1]),
-    int(matches[0][2])
+    int(matches[0][2]),
+    manhattanDistance(int(matches[0]),int(matches[1]))
   });
   beacons.add(new int[]{
     int(matches[1][1]),
     int(matches[1][2])
   });
+}
+
+int manhattanDistance(int[] a, int[] b) {
+  return abs(a[1]-b[1]) + abs(a[2]-b[2]);
 }
 
 void reduceBeaconsToUnique() {
@@ -46,14 +51,11 @@ void getBounds() {
   
   for(int[] sensor: sensors)
     updateBounds(sensor);
-    
-  for(int[] beacon: beacons)
-    updateBounds(beacon);
 }
 
 void updateBounds(int[] coord) {
-  minX = min(minX,coord[0]);
-  minY = min(minY,coord[1]);
-  maxX = max(maxX,coord[0]);
-  maxY = max(maxY,coord[1]);
+  minX = min(minX,coord[0]-coord[2]);
+  minY = min(minY,coord[1]-coord[2]);
+  maxX = max(maxX,coord[0]+coord[2]);
+  maxY = max(maxY,coord[1]+coord[2]);
 }

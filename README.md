@@ -102,13 +102,33 @@ I was already planning to drw the sensor and beacon coverage, until I saw the so
 
 ```
 25 sensors, 7 unique known beacons
-Dimentions: ( 155404 -171037 ),( 3973421 3910685 )
-Size:  3818017 x 4081722
+Dimentions: ( -1753094 -1123735 ),( 5349380 5181352 )
+Size:  7102475 x 6305088
 ```
 
-Nope. I'll have to think about how I represent that data.
+Throwing caution to the wind, I tried to start a sketch with a canvas that size, but
 
+```exception
+java.lang.OutOfMemoryError: Java heap space
+    at java.awt.image.DataBufferInt.<init>(DataBufferInt.java:75)
+    at java.awt.image.Raster.createPackedRaster(Raster.java:467)
+    at java.awt.image.DirectColorModel.createCompatibleWritableRaster(DirectColorModel.java:1032)
+    at java.awt.GraphicsConfiguration.createCompatibleImage(GraphicsConfiguration.java:186)
+An OutOfMemoryError means that your code is either using up too much memory
+    at processing.awt.PGraphicsJava2D.checkImage(PGraphicsJava2D.java:318)
+because of a bug (e.g. creating an array that's too large, or unintentionally
+    at processing.awt.PGraphicsJava2D.beginDraw(PGraphicsJava2D.java:328)
+loading thousands of images), or that your sketch may need more memory to run.
+    at processing.core.PApplet.handleDraw(PApplet.java:2361)
+If your sketch uses a lot of memory (for instance if it loads a lot of data files)
+    at processing.awt.PSurfaceAWT$12.callDraw(PSurfaceAWT.java:1527)
+you can increase the memory available to your sketch using the Preferences window.
+    at processing.core.PSurfaceNone$AnimationThread.run(PSurfaceNone.java:316)
+```
 
+Nope. I need a better strategy for that data. If I had infinite ram, the solution would have worked. I have a valid solution for the test data, and a visalisation to boot:
+
+![Day 15 Part 1 - Test Data](Day15/visualisation.png)
 
 ## Day 16: ???
 
