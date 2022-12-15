@@ -96,7 +96,19 @@ Part 2 was a pretty easy extension of the existing code.
 
 ![Part 2](Day14/part2.png)
 
-## Day 15: ???
+## Day 15: Beacon Exclusion Zone
+
+I was already planning to drw the sensor and beacon coverage, until I saw the solution required a count at row 2000000. After a quick glance at my input, all the value ranges are all in the high 1000000s so maybe some normalization might help. But first I need to parse the input and dig out the coordinates for sensors and beacons. I finally caved and researched how to use the sort function. It seems we need to write and instantiate our own Comparator class according to [Processing Discourse](https://discourse.processing.org/t/sorting-arraylist/5083) and [Processing forum](https://forum.processing.org/two/discussion/19469/sort-a-pvector-array#Item_9), Lets see about the puzzle dimentions then...
+
+```
+25 sensors, 7 unique known beacons
+Dimentions: ( 155404 -171037 ),( 3973421 3910685 )
+Size:  3818017 x 4081722
+```
+
+Nope. I'll have to think about how I represent that data.
+
+
 
 ## Day 16: ???
 
