@@ -21,4 +21,5 @@ void draw() {
     saveFrame("visualisation.png");
   }
   part1();
+  part2();
 }

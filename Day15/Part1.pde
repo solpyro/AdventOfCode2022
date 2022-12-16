@@ -1,9 +1,6 @@
 void part1() {
-  ArrayList<int[]> sweeps = new ArrayList<int[]>();
-  for(int[] sensor: sensors)
-    projectIntoTargetRow(sensor, sweeps);
   
-  reduceSweepRanges(sweeps);
+  ArrayList<int[]> sweeps = getCoverageInRow(target);
   int count = countSweepRanges(sweeps);
   
   for(int[] beacon: beacons)
@@ -13,7 +10,16 @@ void part1() {
   println("Row",target,"contains",count,"excluded positions");
 }
 
-void projectIntoTargetRow(int[] sensor, ArrayList<int[]> sweeps) {
+ArrayList<int[]> getCoverageInRow(int target) {
+  ArrayList<int[]> sweeps = new ArrayList<int[]>();
+  for(int[] sensor: sensors)
+    projectIntoRow(target, sensor, sweeps);
+  
+  reduceSweepRanges(sweeps);
+  return sweeps;
+}
+
+void projectIntoRow(int target, int[] sensor, ArrayList<int[]> sweeps) {
   if(inRange(target,sensor[1]-sensor[2],sensor[1]+sensor[2]))
     sweeps.add(getSweepAtTarget(sensor, target));
 }
