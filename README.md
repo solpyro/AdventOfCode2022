@@ -134,7 +134,9 @@ After a lot of headscratching, I was able to project a list of coverage for _jus
 
 And part 2 was not too much of a departure from that technique really, just a small generalisation and a suprisingly quick bruteforce.
 
-## Day 16: ???
+## Day 16: Proboscidea Volcanium
+
+I get that I need to use some kind of optimal path finding algorithm here, but I'm not sure what that should be.
 
 ## Day 17: ???
 
