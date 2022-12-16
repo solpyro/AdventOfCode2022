@@ -86,7 +86,7 @@ I felt my wheels spinning as I tried to figure out how to parse this one, and af
 
 That stringifier's going to come in handy for Part 2. I'm just going to have to decide on the best way to sort an immutable list in Java (Processing's `ArrayList.sort` method doesn't seem to work). In the morning, with _some_ sleep, I quickly whipped up the bubble sort and got the second star.
 
-## Day 14: Regolith Reservoir ⭐
+## Day 14: Regolith Reservoir ⭐⭐
 
 I thought to draw this much larger and animate the sand grains though each of their positions as they fall, but the logic was much cleaner if I just use the pixel array, so today's visualisation is for ants.
 
@@ -96,7 +96,7 @@ Part 2 was a pretty easy extension of the existing code.
 
 ![Part 2](Day14/part2.png)
 
-## Day 15: Beacon Exclusion Zone
+## Day 15: Beacon Exclusion Zone ⭐
 
 I was already planning to drw the sensor and beacon coverage, until I saw the solution required a count at row 2000000. After a quick glance at my input, all the value ranges are all in the high 1000000s so maybe some normalization might help. But first I need to parse the input and dig out the coordinates for sensors and beacons. I finally caved and researched how to use the sort function. It seems we need to write and instantiate our own Comparator class according to [Processing Discourse](https://discourse.processing.org/t/sorting-arraylist/5083) and [Processing forum](https://forum.processing.org/two/discussion/19469/sort-a-pvector-array#Item_9), Lets see about the puzzle dimentions then...
 
@@ -129,6 +129,8 @@ you can increase the memory available to your sketch using the Preferences windo
 Nope. I need a better strategy for that data. If I had infinite ram, the solution would have worked. I have a valid solution for the test data, and a visalisation to boot:
 
 ![Day 15 Part 1 - Test Data](Day15/visualisation.png)
+
+After a lot of headscratching, I was able to project a list of coverage for _just_ the target row, without having to drw the whole thing to memory. 
 
 ## Day 16: ???
 

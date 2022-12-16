@@ -1,5 +1,5 @@
-String file = "test.txt"; int target = 10; boolean visualise = true; 
-//String file = "data.txt"; int target = 2000000; boolean visualise = false;
+//String file = "test.txt"; int target = 10; boolean visualise = true; 
+String file = "data.txt"; int target = 2000000; boolean visualise = false;
 
 ArrayList<int[]> sensors, beacons;
 int minX, minY, maxX, maxY;
@@ -21,15 +21,4 @@ void draw() {
     saveFrame("visualisation.png");
   }
   part1();
-}
-
-void part1() {
-  for(int[] sensor: sensors) {
-    //project field into target row
-  }
-  //overlay fields & sum
-  for(int[] beacon: beacon) {
-    //subtract any beacon in target row
-  }
-  println("Row",target,"contains",count,"excluded positions");
 }
