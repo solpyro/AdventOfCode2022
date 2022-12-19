@@ -136,7 +136,9 @@ And part 2 was not too much of a departure from that technique really, just a sm
 
 ## Day 16: ???
 
-## Day 17: ???
+## Day 17: Pyroclastic Flow
+
+Today was a day for self-playing tetris. Writing the engine took long enough, and then I just had to let it run for the first 2022 rocks.
 
 ## Day 18: ???
 
