@@ -26,5 +26,6 @@ void part1() {
   if(rockCounter == 2023) {
     //count & announce rows with rock
     println("The rock tower is",board.size()-getHighestRock(),"units tall");
+    noLoop();
   }
 }

@@ -138,9 +138,9 @@ And part 2 was not too much of a departure from that technique really, just a sm
 
 I get that I need to use some kind of optimal path finding algorithm here, but I'm not sure what that should be.
 
-## Day 17: Pyroclastic Flow
+## Day 17: Pyroclastic Flow ⭐
 
-Today was a day for self-playing tetris. Writing the engine took long enough, and then I just had to let it run for the first 2022 rocks.
+Today was a day for self-playing tetris. Writing the engine took long enough, and then I just had to let it run for the first 2022 rocks. Even at a nominal 60fps it takes some time, since I move a block down one row per frame. I could optimize to calculate the drop for each brick and place it correctly, without redrawing, but where's the fun in that?
 
 ## Day 18: ???
 
