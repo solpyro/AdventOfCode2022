@@ -11,6 +11,8 @@ float sceneOffset;
 void setup() {
   parse();
   
+  part1();
+  
   sceneOffset = cubes.length/2l;
   
   size(200,200,P3D);
