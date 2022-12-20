@@ -10,12 +10,12 @@ float sceneOffset;
 
 void setup() {
   parse();
-  
   part1();
+  part2();
   
   sceneOffset = cubes.length/2l;
   
-  size(200,200,P3D);
+  size(500,500,P3D);
 }
 
 void draw() {
