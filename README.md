@@ -156,7 +156,9 @@ After the trauma of the last couple of days, part 1 was reletively easy today. O
 
 Now I'm expected to implement Factorio? Today's puzzle feels a lot like day 16's and I'm not sure of the best way to solve either.
 
-## Day 20: ???
+## Day 20: Grove Positioning System ⭐
+
+Today seemed deceptively simple, until I realised I needed to keep track of the numbers I need to move, and the order to move them in. After some perseverance, I was able to get the elements moving in the same way as the example showed.
 
 ## Day 21: ???
 
