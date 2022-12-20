@@ -146,6 +146,8 @@ Ok, I see the fun in going fast for part 2. Having made the necessary changes to
 
 Oh crap this is going to take a long time, it's been almost a day and the rock counter is at 1838100. And this is running the test data to make sure I didn't mess up. At this rate, I won't have an answer before Christmas!
 
+**Update:** After almost exactly 24h of running, we're still only at rock 2645000, at which rate it will take 500000 days to complete, and I started the process running with the test data. I can see from the visualisation that the bricks are repeating some pattern, and probably the good solution is to figure out the period of the pattern, and fastforward to 1000000000000 rocks that way.
+
 ## Day 18: Boiling Boulders ⭐
 
 This seems like a good excuse to explore Processing's [3D capabilities](https://processing.org/tutorials/p3d). It seems pretty basic, especially since you can't move things through 3d space,  you have to apply and remove translations and just draw the model at `(0,0,0)`. Also, the 3d scene isn't preserved between draw cycles, so everything has to be specified each frame. But for our purposes it seems fine and I got a voxel render of my lava blob pretty quickly. Of course the actual puzzle today doesn't even require a render. 
