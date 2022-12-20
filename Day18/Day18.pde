@@ -3,6 +3,7 @@ String file = "data.txt";
 
 int[][] coords;
 boolean[][][] cubes;
+boolean[][][] flood;
 
 
 float cameraRadius = (height/2) / tan(PI/4);
