@@ -5,16 +5,30 @@ color background = color(0);
 
 void draw() {
   background(background);
-
-  if (rock == null) {
-    rock = createRock();
-    part1();
-  } else {
-    fireJets();
-    if (!dropRock()) {
-      //  write to board
+  
+  if(fastMode) {
+    if (rock == null) {
+      rock = createRock();
+      part2();
+    } else {
+      do {
+        fireJets();
+      } while(dropRock());
       writeRockToBoard();
       rock = null;
+      deleteBlockedRows();
+    }
+  } else {
+    if (rock == null) {
+      rock = createRock();
+      part1();
+    } else {
+      fireJets();
+      if (!dropRock()) {
+        //  write to board
+        writeRockToBoard();
+        rock = null;
+      }
     }
   }
   drawBoard();
@@ -60,8 +74,6 @@ void drawStoppedRocks() {
     for (int x = 0; x < board.get(y).length; x++)
       if(board.get(y)[x])
         drawPixel(x+1,boardTop+y,stoppedRock);
-      else
-        drawPixel(x+1,boardTop+y,color(0,128,0));
 }
 
 void drawPixel(int x, int y, color c) {

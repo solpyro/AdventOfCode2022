@@ -142,6 +142,10 @@ I get that I need to use some kind of optimal path finding algorithm here, but I
 
 Today was a day for self-playing tetris. Writing the engine took long enough, and then I just had to let it run for the first 2022 rocks. Even at a nominal 60fps it takes some time, since I move a block down one row per frame. I could optimize to calculate the drop for each brick and place it correctly, without redrawing, but where's the fun in that?
 
+Ok, I see the fun in going fast for part 2. Having made the necessary changes to the rock counter (no int overflows for me) and implemented a gear change when we hit 2023 rocks, I just need to sit back and relax once more as I brute-force my way to the answer.
+
+Oh crap this is going to take a long time, it's been almost a day and the rock counter is at 1838100. And this is running the test data to make sure I didn't mess up. At this rate, I won't have an answer before Christmas!
+
 ## Day 18: Boiling Boulders ⭐
 
 This seems like a good excuse to explore Processing's [3D capabilities](https://processing.org/tutorials/p3d). It seems pretty basic, especially since you can't move things through 3d space,  you have to apply and remove translations and just draw the model at `(0,0,0)`. Also, the 3d scene isn't preserved between draw cycles, so everything has to be specified each frame. But for our purposes it seems fine and I got a voxel render of my lava blob pretty quickly. Of course the actual puzzle today doesn't even require a render. 

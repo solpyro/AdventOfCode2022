@@ -73,3 +73,35 @@ int getHighestRock() {
         return y;
   return board.size();
 }
+
+void deleteBlockedRows() {
+  boolean[] cols = new boolean[]{false,false,false,false,false,false,false};
+  int y = 0;
+  while(isAllFalse(cols) && y < board.size()) {
+    cols = or(cols,board.get(y));
+    y++;
+  }
+  
+  if(y == board.size())
+    return;
+  
+  deletedRows += board.size()-y;
+  while(board.size()>y)
+    board.remove(y);
+}
+
+boolean isAllFalse(boolean[] cols) {
+  return !(cols[0] && cols[1] && cols[2] && cols[3] && cols[4] && cols[5] && cols[6]); 
+}
+
+boolean[] or(boolean[] a, boolean[] b) {
+  return new boolean[] {
+    a[0] || b[0],
+    a[1] || b[1],
+    a[2] || b[2],
+    a[3] || b[3],
+    a[4] || b[4],
+    a[5] || b[5],
+    a[6] || b[6]
+  };
+}
