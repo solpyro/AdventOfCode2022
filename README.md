@@ -148,7 +148,9 @@ This seems like a good excuse to explore Processing's [3D capabilities](https://
 
 After the trauma of the last couple of days, part 1 was reletively easy today. Of course part 2 has to get complicated and I'm not sure how to solve that.
 
-## Day 19: ???
+## Day 19: Not Enough Minerals
+
+Now I'm expected to implement Factorio? Today's puzzle feels a lot like day 16's and I'm not sure of the best way to solve either.
 
 ## Day 20: ???
 
