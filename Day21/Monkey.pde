@@ -36,4 +36,13 @@ class Monkey {
         throw new RuntimeException("Unknown operator: "+op);
     }
   }
+  
+  boolean contains(String name) {
+    if(isNumber)
+      return false;
+      
+    return (a.equals(name) || b.equals(name))
+        || troop.get(a).contains(name)
+        || troop.get(b).contains(name);
+  }
 }
