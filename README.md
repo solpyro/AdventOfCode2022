@@ -163,7 +163,9 @@ Now I'm expected to implement Factorio? Today's puzzle feels a lot like day 16's
 
 Today seemed deceptively simple, until I realised I needed to keep track of the numbers I need to move, and the order to move them in. After some perseverance, I was able to get the elements moving in the same way as the example showed. And with reletively little effort, I was able to extend the code for part 2.
 
-## Day 21: ???
+## Day 21: Monkey Math
+
+I guess (hope) things are getting easier as we get closer to Christmas. Parsing and Part 1 were easy and quick. Part 2 is going to take some thinking about.
 
 ## Day 22: ???
 
