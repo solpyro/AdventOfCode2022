@@ -171,7 +171,9 @@ After a little puzzling, I figured out an algorithm to walk the tree and invert 
 
 ## Day 22: Monkey Map
 
-## Day 23: ???
+## Day 23: Unstable Diffusion
+
+Oh hey, it's time for GoL. After quickly diging out my old GoL Processing implementation, I remebered the technique I'd used to buffer current positions in the decisison phase. We'll see how we can use that for the particular rules of this puzzle.
 
 ## Day 24: ???
 
