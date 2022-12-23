@@ -169,7 +169,7 @@ I guess (hope) things are getting easier as we get closer to Christmas. Parsing 
 
 After a little puzzling, I figured out an algorithm to walk the tree and invert the operations, but the answer it spat out was `-3582317955835` which is apparently incorrect. Given all other monkeys shout positive numbers, I'm assuming this is a memory overflow issue, although the number is well within the range of the a `long`.
 
-## Day 22: ???
+## Day 22: Monkey Map
 
 ## Day 23: ???
 
