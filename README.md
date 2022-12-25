@@ -173,7 +173,9 @@ After a little puzzling, I figured out an algorithm to walk the tree and invert 
 
 ## Day 23: Unstable Diffusion
 
-Oh hey, it's time for GoL. After quickly diging out my old GoL Processing implementation, I remebered the technique I'd used to buffer current positions in the decisison phase. We'll see how we can use that for the particular rules of this puzzle.
+Oh hey, it's time for GoL. After quickly diging out my old GoL Processing implementation, I remebered the technique I'd used to buffer current positions in the decisison phase. We'll see how we can use that for the particular rules of this puzzle. 
+
+I've been working at this one for a while and I should have everything correct, but there seems to be a problem with the way I'm tracking the decisions, and my test elves move in a different way than the example shows.
 
 ## Day 24: ???
 
