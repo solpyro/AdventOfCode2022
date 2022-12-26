@@ -181,4 +181,6 @@ I've been working at this one for a while and I should have everything correct, 
 
 I like the idea of this one, and I think visualising this (at least the test data) would be fun. But actually solving the puzzle seems too complicated.
 
-## Day 25: ???
+## Day 25: Full of Hot Air
+
+So for this I need to write a two-way base-5 parser that also accounts for Roman numeral style negative numbers.
