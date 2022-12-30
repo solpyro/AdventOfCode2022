@@ -184,3 +184,4 @@ I like the idea of this one, and I think visualising this (at least the test dat
 ## Day 25: Full of Hot Air
 
 So for this I need to write a two-way base-5 parser that also accounts for Roman numeral style negative numbers.
+After a week of work, I found a few minutes to tackle this bwfore the year ends. The SNAFU->Decimal convertion is pretty easy, but I'm not too sure how to tackle the reverse function.

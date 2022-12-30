@@ -7,8 +7,8 @@ String file = "test.txt";
 int[] fuelReqs;
 
 void setup() {
-  //demo();
-  //parse();
+  demo();
+  parse();
   //part1();
 }
 
@@ -26,6 +26,7 @@ void demo() {
 
 void parse() {
   fuelReqs = toInts(loadStrings(file));
+  prettyPrint(fuelReqs);
 }
 
 void part1() {
